@@ -1,0 +1,31 @@
+<div class="row mx-auto container mt-5">
+  <div class="col-md-6">
+    <div class="container mt-3">
+      <h3>Socket.IO stack  <strong>MEAN</strong> </h3>
+      <form #tasks="ngForm" (ngSubmit)="addToDo(tasks)">
+        <div class="card card-body">
+          <div class="form-group">
+            <input type="text" name="titulo" [(ngModel)]="todos.titulo" class="form-control">
+          </div>
+  
+          <div class="form-group">
+            <input type="text" name="descripcion" [(ngModel)]="todos.descripcion" class="form-control">
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-success">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card" *ngFor="let tarea of tareas">
+      <div class="card-body">
+        <p class="card-title">{{tarea.titulo}}</p>
+        <p class="card-text">{{tarea.descripcion}}</p>
+        <a href="#" class="btn btn-primary">Ready</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
